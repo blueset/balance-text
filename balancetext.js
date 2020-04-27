@@ -363,7 +363,7 @@
      * @return {boolean}
      */
     function isBreakChar(txt, index) {
-        const re = /([^\S\u00a0]|-|\u2014|\u2013|\u00ad|\u200B])(?![^<]*>)/g;
+        const re = /([^\S\u00a0]|-|\u2014|\u2013|\u00ad|\u200B)(?![^<]*>)/g;
         let match;
 
         if (!breakMatches) {
