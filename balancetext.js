@@ -355,14 +355,15 @@
     /**
      * Returns true iff char at index is a break char outside of HTML < > tags.
      * Break char can be: whitespace (except non-breaking-space: u00a0),
-     * hypen, emdash (u2014), endash (u2013), or soft-hyphen (u00ad).
+     * hypen, emdash (u2014), endash (u2013), soft-hyphen (u00ad), zero-width
+     * space (u200b).
      *
      * @param {string} txt   - the text to check
      * @param {number} index - the index of the character to check
      * @return {boolean}
      */
     function isBreakChar(txt, index) {
-        const re = /([^\S\u00a0]|-|\u2014|\u2013|\u00ad)(?![^<]*>)/g;
+        const re = /([^\S\u00a0]|-|\u2014|\u2013|\u00ad|\u200B])(?![^<]*>)/g;
         let match;
 
         if (!breakMatches) {
